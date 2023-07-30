@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        circle {fill: lightblue; stroke: black;}
+        .inline{display:flex}
+        .block{width:200px;
+            height:200px}
+        .center{vertical-align: 'middle';
+        display: inline-block;}
+        p.solid {border-style: solid;}
+
+</style>
 <script src='https://d3js.org/d3.v5.min.js'></script>
 <script src="main.js"></script>
-<body onload="init()">
-<svg width=150 height=300>
+<body class = "center" onload="init()">
+    <h1>
+        Infant Mortality Related to GDP for the Years 1996-2011
+    </h1>
+<h3>
+    Select Year:
+</h3>
+    <form>
+        <select id="getYear" onchange="newChart()">
+          <option input = 'year' value="1996" selected >1996</option>
+          <option input = 'year' value="1997">1997</option>
+          <option input = 'year' value="1998">1998</option>
+          <option input = 'year' value="1999">1999</option>
+          <option input = 'year' value="2000">2000</option>
+          <option input = 'year' value="2001">2001</option>
+          <option input = 'year' value="2002">2002</option>
+          <option input = 'year' value="2003">2003</option>
+          <option input = 'year' value="2004">2004</option>
+          <option input = 'year' value="2005">2005</option>
+          <option input = 'year' value="2006">2006</option>
+          <option input = 'year' value="2007">2007</option>
+          <option input = 'year' value="2008">2008</option>
+          <option input = 'year' value="2009">2009</option>
+          <option input = 'year' value="2010">2010</option>
+          <option input = 'year' value="2011">2011</option>
+        </select>
+      </form>
+<div class="inline">
+<svg width=600 height=600>
 </svg>
-<script>
-</script>
-<h1>
-    This is a test
-</h1>
-<p>
-    Testing my page
+<p id="annotation" class = block>
+    The trend indicates that as GDP increase for a country,
+    infant mortality decreases. Wealthier countries have on average better
+    infant mortality rates. 
 </p>
+</div>
+<div id ='tooltip'></div>
 </body>
 </html>
